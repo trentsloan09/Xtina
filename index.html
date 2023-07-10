@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="hamburger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  
+  <div id="imageDiv">
+    <!-- Your recent pictures here -->
+    <img src="ChangeImage" alt="Recent Pictures">
+  </div>
+  
+  <div id="menuDiv">
+    <!-- Your tipping and support menu here -->
+    <h1>Tipping and Support</h1>
+    <h4>Here's how you can tip and support:</h4>
+    <ul>
+      <li>Option 1: Venmo</li>
+      <li>Option 2: PayPal</li>
+      <li>Option 3: Bank Transfer</li>
+    </ul>
+  </div>
+
+  <script>
+    // Array of image URLs
+    const images = [
+      './Images/image1.png',
+      './Images/image2.png',
+      './Images/image3.png',
+      './Images/image4.png',
+      './Images/image5.png',
+      './Images/image6.png',
+      './Images/image7.png',
+      './Images/image8.png',
+      './Images/image9.png',
+    ];
+
+    let currentIndex = 0; // Current index of the displayed image
+    let isMenuVisible = false;
+
+    function toggleMenu() {
+      isMenuVisible = !isMenuVisible;
+
+      if (isMenuVisible) {
+        menuDiv.style.display = 'block';
+        imageDiv.style.display = 'none';
+      } else {
+        menuDiv.style.display = 'none';
+        imageDiv.style.display = 'block';
+      }
+    }
+
+    function changeImage() {
+      // Update the image source with the current image URL
+      const image = new Image();
+      image.src = images[currentIndex];
+
+      image.onload = function() {
+        imageDiv.innerHTML = '';
+        imageDiv.appendChild(image);
+
+        // Increment the index to move to the next image
+        currentIndex = (currentIndex + 1) % images.length;
+      };
+    }
+
+    // Get the necessary DOM elements
+    const hamburger = document.querySelector('.hamburger');
+    const imageDiv = document.getElementById('imageDiv');
+    const menuDiv = document.getElementById('menuDiv');
+
+    // Add a click event listener to the hamburger icon
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Set the initial image
+    changeImage();
+
+    // Set an interval to change the image every x seconds (e.g., 5 seconds)
+    const intervalSeconds = 5;
+    setInterval(changeImage, intervalSeconds * 1000);
+  </script>
+
+</body>
+</html>
