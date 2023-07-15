@@ -22,7 +22,7 @@ body {
 
 #imageDiv {
   position: fixed;
-  top: 50%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -30,7 +30,7 @@ body {
 #menuDiv {
   display: none;
   position: fixed;
-  top: 50%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -39,6 +39,18 @@ body {
   color: yellow;
 }
 
-#menuDiv h1 {
-  
+#nowPlaying {
+  position: fixed;
+  top: 75%;
+  left: 46%;
+}
+
+#setList {
+  position: fixed;
+  top: 150px;
+  left: 10px;
+}
+
+#song-table tbody {
+position: relative;
 }

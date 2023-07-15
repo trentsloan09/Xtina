@@ -5,42 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <title>Document</title>
+  <script src="setlistcsv.json"></script>
 </head>
 <body>
+    
   <div class="hamburger">
     <div class="line"></div>
     <div class="line"></div>
     <div class="line"></div>
   </div>
+
+  <table id="song-table">
+    <thead>
+      <tr>
+        <th>Song</th>
+        <th>Artist</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
   
-  <div id="imageDiv">
-    <!-- Your recent pictures here -->
-    <img src="ChangeImage" alt="Recent Pictures">
-  </div>
-  
-  <div id="menuDiv">
-    <!-- Your tipping and support menu here -->
-    <h1>Tipping and Support</h1>
-    <h4>Here's how you can tip and support:</h4>
-    <ul>
-      <li>Option 1: Venmo</li>
-      <li>Option 2: PayPal</li>
-      <li>Option 3: Bank Transfer</li>
-    </ul>
-  </div>
+  <div id="container">
+    <div id="imageDiv">
+      <!-- Your recent pictures here -->
+      <img src="ChangeImage" alt="Recent Pictures">
+    </div>
+
+
+    
+    <div id="menuDiv">
+      <!-- Your tipping and support menu here -->
+      <h1>Tipping and Support</h1>
+      <h4>Here's how you can tip and support:</h4>
+      <ul>
+        <li>Option 1: Venmo</li>
+        <li>Option 2: PayPal</li>
+        <li>Option 3: Bank Transfer</li>
+      </ul>
+    </div>
+      
+    <div id="nowPlaying">
+      <h2>Now Playing:</h2>
+    </div>
 
   <script>
     // Array of image URLs
     const images = [
-      './Images/image1.png',
-      './Images/image2.png',
-      './Images/image3.png',
-      './Images/image4.png',
-      './Images/image5.png',
-      './Images/image6.png',
-      './Images/image7.png',
-      './Images/image8.png',
-      './Images/image9.png',
+      './Images/xtinaimage1.png',
+      './Images/xtinaimage2.png',
+      './Images/xtinaimage3.png',
+      './Images/xtinaimage4.png',
     ];
 
     let currentIndex = 0; // Current index of the displayed image
@@ -86,7 +103,26 @@
     // Set an interval to change the image every x seconds (e.g., 5 seconds)
     const intervalSeconds = 5;
     setInterval(changeImage, intervalSeconds * 1000);
-  </script>
 
+  // Load the embedded Excel document
+  // function loadExcelDocument() {
+  //   var container = document.getElementById("setList");
+  //   var iframe = document.createElement("iframe");
+
+  //   // Set the source URL of the embedded Excel document
+  //   iframe.src= "https://onedrive.live.com/embed?resid=848DE0CC3EA66171%2128349&authkey=!AK_R6rm1x4PGMCU&em=2";
+  //   // Set the width and height of the iframe
+  //   iframe.width = "150%";
+  //   iframe.height = "1150";
+
+  //   // Append the iframe to the container
+  //   container.appendChild(iframe);
+  // }
+
+  // // Call the function to load the embedded Excel document
+  // loadExcelDocument();
+
+  </script>
+</div>
 </body>
 </html>
